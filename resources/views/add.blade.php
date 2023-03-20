@@ -44,7 +44,7 @@
 </style>
 @section('title', 'Todo List')
 @section('from')
-  <form action="/" method="get">
+  <form action="/add" method="post">
   @csrf
     <input class="from-tetle" type="text" cols="50" name="content" >
     <input class="from-btn" type="submit" value="追加">

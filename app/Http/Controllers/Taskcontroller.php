@@ -2,27 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\todo;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Http\Requests\todoRequest;
 
 class Taskcontroller extends Controller
 {
-    public function index($text = "デフォルト")
+    public function index()
   {
-    return $text;
+    return view('index');
   }
 
-public function add()
+    public function add()
   {
-    return $text;
+    return view('add');
   }
 
-public function upd()
+    public function upd()
   {
-    return $text;
+    return view('upd');
   }
   
-public function del()
+    public function del()
   {
-    return $text;
+    return view('del');
   }  
 }

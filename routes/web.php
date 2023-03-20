@@ -14,15 +14,9 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::post('/', function () {
-    return view('welcome');
-});
-Route::put('/', function () {
-    return view('welcome');
-});
-Route::deleate('/', function () {
-    return view('welcome');
+Route::prefix('/')->group(function(){
+    Route::get('', [Taskcontroller::class, 'index']) ;
+    Route::get('add', [Taskcontroller::class, 'add']) ;
+    Route::put('', [Taskcontroller::class, 'upd']) ;
+    Route::delete('', [Taskcontroller::class, 'del']) ;
 });
