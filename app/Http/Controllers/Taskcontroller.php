@@ -7,16 +7,26 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\todoRequest;
 
-class Taskcontroller extends Controller
+class TaskController extends Controller
 {
     public function index()
   {
-    return view('index');
+    $todos = todo::all();
+    return view('index', ['todos' => $todos]);;
   }
 
-    public function add()
+  public function add()
   {
-    return view('add');
+    $todos = todo::all();
+    return view('add', ['todos' => $todos]);
+  }
+
+   public function create(todoRequest $request)
+  {
+    $form = $request->all();
+    unset($form['_token']);
+    todo::create($form);
+    return redirect('/');
   }
 
     public function upd()

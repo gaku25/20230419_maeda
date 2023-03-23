@@ -60,3 +60,11 @@
     </tr>
 </table>
 @endsection
+@foreach ($todos as $todo)
+  <tr>
+    <td>{{$todo->id}}</td>
+    <td>{{$todo->tetle}}</td>
+    <td>{{$todo->created_at}}</td>
+    <td>{{$todo->updated_at}}</td>
+  </tr>
+@endforeach
