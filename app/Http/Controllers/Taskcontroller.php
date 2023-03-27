@@ -12,7 +12,7 @@ class TaskController extends Controller
     public function index()
   {
     $todos = todo::all();
-    return view('index', ['todos' => $todos]);;
+    return view('index', ['todos' => $todos]);
   }
 
   public function add()
@@ -29,13 +29,29 @@ class TaskController extends Controller
     return redirect('/');
   }
 
-    public function upd()
+    public function edit(todoRequest $request)
   {
-    return view('upd');
+    $todos = todo::find($request->id);
+    return view('edit', ['form' => $todos]);
+  }
+
+    public function upd(todoRequest $request)
+  {
+    $form = $request->all();
+    unset($form['_token']);
+    todo::where('id', $request->id)->update($form);
+    return redirect('/');
   }
   
-    public function del()
+    public function del(todoRequest $request)
   {
-    return view('del');
+    $todos = todo::find($request->id);
+    return view('delete', ['form' => $todos]);
   }  
+
+  public function remove(todoRequest $request)
+  {
+    todo::find($request->id)->delete();
+    return redirect('/');
+  }
 }

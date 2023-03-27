@@ -13,7 +13,7 @@ class todoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,10 +24,15 @@ class todoRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'=>'required',
             'title'=>'string|max:20',
-            'created_at'=>'required|date',
-            'updated_at'=>'required|date',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.string' => 'タスクは20文字以内で入力してください。',
+        ];
+    }
+
 }
