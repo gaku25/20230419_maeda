@@ -17,9 +17,6 @@ use App\Http\Controllers\TaskController;
 Route::group(['prefix' => '/'], function () {
     Route::get('/', [TaskController::class, 'index']);
     Route::post('/add', [TaskController::class, 'create']);
-    Route::get('/edit', [TaskController::class, 'edit']);
-    Route::post('/edit', [TaskController::class, 'upd']);
-    Route::get('/add', [TaskController::class, 'add']);
-    Route::get('/del', [TaskController::class, 'del']);
+    Route::post('/edit', [TaskController::class, 'update']);
     Route::post('/del', [TaskController::class, 'remove']);
 });

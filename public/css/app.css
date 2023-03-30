@@ -2,89 +2,125 @@ body {
   background-color: rgb(48, 22, 139);
 }
 
-tr{
+tr {
   height: 50px;
 }
 
 .top {
   background-color: rgb(255, 255, 255);
   width: 55vw;
-  margin: 200px auto;
+  margin: 250px auto;
   padding: 20px 20px;
   border-radius: 2%;
 }
 
 .top-title {
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .top-from-tetle {
-/* 下記の％を変更することによってバランスが崩れてしまった */
-    width: 70%;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+  width: 80%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .top-from {
   margin-bottom: 20px;
 }
 
-/* 下記のコードでレイアウトが崩れたがクラス(.list-frist)を変更することで問題は解消された */
-.list-frist {
+.from {
   display: flex;
-  /* 下記のコードの場合はレイアウトが崩れる */
-  justify-content:  space-between;
-  /* 下記のコードの場合はレイアウトは崩れないがおかしいまま */
-  /* flex-wrap: wrap; */
-  margin-left: 20px;
 }
 
-/* .list-second {
-  padding-left: 300px;
-} */
-
-.list-third{
-  padding-left: 150px;
+.list-frist {
+  margin-left: 70px;
+  padding-left: 50px;
 }
 
-/* .list-todo{
-  margin-left: 50px;
-} */
+.list-third {
+  padding-left: 60px;
+}
+
+.list-four {
+  padding-left: 170px;
+}
+
+.list-five {
+  padding-left: 175px;
+}
+
+.list-six {
+  padding-left: 75px;
+}
+
+.list-todo {
+  width: 100%;
+  padding-left: 50px;
+}
 
 .list-todo td {
-  text-align: center;
+  vertical-align: baseline;
 }
 
-.todo-upd{
+.todo-upd {
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-left: 50px;
+  width: 125%;
 }
 
-.from-btn_add{
+.from-btn_add {
   margin-left: 100px;
   background-color: rgb(255, 255, 255);
-  color: #ff08ea;
-  border: 2px solid #ff08ea;
-  padding: 5px 15px;
+  color: #ce00bd;
+  border: 2px solid #ce00bd;
+  padding: 7px 15px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  outline: none;
 }
 
-.from-btn_upd{
-  margin-left: 100px;
+.from-btn_add:hover {
+  background-color: #ce00bd;
+  border-color: #ce00bd;
+  color: #fff;
+}
+
+.from-btn_upd {
+  margin-left: 160px;
   background-color: rgb(255, 255, 255);
   color: #f56827;
   border: 2px solid #f56827;
-  padding: 5px 15px;
+  padding: 7px 15px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  outline: none;
 }
 
-.from-btn_del{
-  margin-left: 100px;
+.from-btn_upd:hover {
+  background-color: #fa9770;
+  border-color: #fa9770;
+  color: #fff;
+}
+
+.from-btn_del {
+  margin-left: 60px;
   background-color: rgb(255, 255, 255);
   color: #3affdee8;
   border: 2px solid #3affdee8;
-  padding: 5px 15px;
+  padding: 7px 15px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  outline: none;
 }
 
+.from-btn_del:hover {
+  background-color: #3affdee8;
+  border-color: #3affdee8;
+  color: #fff;
+}
