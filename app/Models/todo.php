@@ -9,5 +9,15 @@ class todo extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title'];
+    protected $fillable = [
+        'title',
+    ];
+
+    public function tag(){
+    return $this->belongsTo('App\Models\tag');
+}
+
+    public function user(){
+    return $this->belongsTo('App\Models\user');
+}
 }

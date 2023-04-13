@@ -20,3 +20,5 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/edit', [TaskController::class, 'update']);
     Route::post('/del', [TaskController::class, 'remove']);
 });
+
+require __DIR__.'/auth.php';//これが追加

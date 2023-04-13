@@ -6,13 +6,16 @@ use App\Models\todo;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\todoRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
   public function index()
   {
+    $user = Auth::user();
     $todos = todo::all();
-    return view('index', ['todos' => $todos]);
+    $param = ['todos' => $todos, 'user' =>$user];
+    return view('index', $param);
   }
 
   public function create(todoRequest $request)
@@ -31,7 +34,7 @@ class TaskController extends Controller
       'title' => $form['title']
     ]);
     return redirect('/');
-  }  
+  }
 
   public function remove(Request $request)
   {
