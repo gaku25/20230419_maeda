@@ -10,10 +10,10 @@ class tag extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
+        'name',
     ];
 
     public function todo(){
-    return $this->hasOne('App\Models\todo');
+    return $this->hasOne('App\Models\Todo');
 }
 }

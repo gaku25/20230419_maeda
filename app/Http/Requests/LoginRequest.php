@@ -32,10 +32,15 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => '・名前は必須です',
-            'name.min|max'  => '・名前は8文字以上191文字以内で入力してください',
-            'password.required'=>'・パスワードは必須です',
-            'password.min|max'=>'・パスワードは8文字以上191文字以内で入力してください',
+            'email.required' => '・メールアドレスは必須です',
+            'email.email' => '・メールアドレスの形式で入力してください',
+            'email.unique' => 'このメールアドレスは登録済みです',
+            'email.min' => '・メールアドレスは8文字以上入力してください',
+            'email.max' => '・メールアドレスは191文字以内で入力してください',
+            'password.required' => '・パスワードは必須です',
+            'password.confirmed' => '・パスワードと確認用パスワードが一致しません',
+            'password.min' => '・パスワードは8文字以上入力してください',
+            'password.max' => '・パスワードは191文字以内で入力してください',
         ];
     }
 }

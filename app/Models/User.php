@@ -42,6 +42,6 @@ class User extends Authenticatable
   ];
 
   public function todo(){
-    return $this->hasOne('App\Models\todo');
+    return $this->hasOne('App\Models\Todo');
 }
 }

@@ -36,10 +36,13 @@ class RegisterRequest extends FormRequest
             'name.required' => '・名前は必須です',
             'name.min|max'  => '・名前は191文字以内で入力してください',
             'email.required'=>'・メールアドレスは必須です',
-            'email.min|max'=>'・・メールアドレスは8文字以上191文字以内で入力してください',
+            'email.email' => 'メールアドレスの形式で入力してください',
+            'email.min' => '・メールアドレスは8文字以上入力してください',
+            'email.max' => '・メールアドレスは191文字以内で入力してください',
             'email.unique'=>'・このメールアドレスは登録済みです',
             'password.required'=>'・パスワードは必須です',
-            'password.min|max'=>'・パスワードは8文字以上191文字以内で入力してください',
+            'password.min' => '・パスワードは8文字以上入力してください',
+            'password.max' => '・パスワードは191文字以内で入力してください',
         ];
     }
 }
